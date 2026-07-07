@@ -34,11 +34,11 @@ button {
   transition: 0.2s;
 }
 
-button:hover {
+button:not(.square):hover {
   transform: scale(1.05);
 }
 
-button:active {
+button:not(.square):active {
   transform: scale(0.98);
 }
 
@@ -63,10 +63,6 @@ button:active {
   color: #2563eb;
 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-.square:hover {
-  background: #dbeafe;
 }
 
 input {
@@ -95,4 +91,48 @@ button {
 
 .retrybutton {
   background: red;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  input {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  button:not(.square) {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .board {
+    grid-template-columns: repeat(3, 90px);
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .square {
+    width: 90px;
+    height: 90px;
+    font-size: 2.2rem;
+  }
 }

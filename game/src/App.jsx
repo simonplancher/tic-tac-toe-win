@@ -67,7 +67,7 @@ export default function App() {
     newBoard[index] = value;
 
     if (!newBoard.includes(null)) {
-      checkPuzzleSolution();
+      checkPuzzleSolution(newBoard);
     }
 
     setBoard(newBoard);
@@ -75,8 +75,8 @@ export default function App() {
 
   const solution = ["1", "4", "9", "2", "7", "3", "5", "8", "6"];
 
-  function checkPuzzleSolution() {
-    const correct = board.every((value, index) => value === solution[index]);
+  function checkPuzzleSolution(newBoard) {
+    const correct = newBoard.every((value, index) => value === solution[index]);
     if (correct) {
       setScreen("win");
     } else {

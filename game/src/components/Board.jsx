@@ -1,17 +1,26 @@
 import Square from "./Square";
 
-export default function Board({ board, onClick }) {
+export default function Board({
+    board,
+    onClick,
+    mode = "tictactoe",
+    onInput
+}) {
     return (
         <div className="container">
 
-            <h1>Tic Tac Toe</h1>
+            <h1>
+                {mode === "tictactoe" ? "Tic Tac Toe" : "Puzzle"}
+            </h1>
 
             <div className="board">
                 {board.map((square, index) => (
                     <Square
                         key={index}
                         value={square}
-                        onClick={() => onClick(index)}
+                        mode={mode}
+                        onClick={() => onClick?.(index)}
+                        onInput={(value) => onInput?.(index, value)}
                     />
                 ))}
             </div>

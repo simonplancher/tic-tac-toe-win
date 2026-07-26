@@ -49,23 +49,60 @@ button:not(.square):active {
   margin: 30px auto;
 }
 
+/* Gemeinsames Styling für TicTacToe und Puzzle */
 .square {
   width: 120px;
   height: 120px;
 
   background: white;
+  color: #2563eb;
 
+  border: none;
   border-radius: 15px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 
   font-size: 3rem;
   font-weight: bold;
 
-  color: #2563eb;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s;
 }
 
-input {
+/* TicTacToe */
+button.square {
+  cursor: pointer;
+}
+
+button.square:hover {
+  background: #dbeafe;
+}
+
+/* Puzzle */
+.puzzle-input {
+  text-align: center;
+  outline: none;
+
+  appearance: textfield;
+  -moz-appearance: textfield;
+
+  padding: 0;
+  margin: 0;
+}
+
+.puzzle-input:focus {
+  background: #dbeafe;
+  border: 3px solid #2563eb;
+}
+
+/* Pfeile bei number-Inputs entfernen */
+.puzzle-input::-webkit-inner-spin-button,
+.puzzle-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Normale Inputs (Email etc.) */
+input:not(.puzzle-input) {
   width: 280px;
   padding: 12px;
   margin-top: 20px;
@@ -114,7 +151,7 @@ button {
     padding: 0 10px;
   }
 
-  input {
+  input:not(.puzzle-input) {
     width: 100%;
     max-width: 320px;
   }

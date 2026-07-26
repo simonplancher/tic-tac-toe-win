@@ -1,17 +1,11 @@
-export default function LoseScreen({ retry }) {
+export default function LoseScreen({ mode, retry }) {
+  return (
+    <div className="container">
+      <h1>❌ You Lost</h1>
+      {mode === "puzzle" && <p>Wrong code.</p>}
+      {mode === "tictactoe" && <p>The computer got lucky.</p>}
 
-    return (
-        <div className="container">
-
-            <h1>❌ You Lost</h1>
-
-            <p>The computer got lucky.</p>
-
-            <button onClick={retry}>
-                Try Again
-            </button>
-
-        </div>
-    );
-
+      <button onClick={retry}>Try Again</button>
+    </div>
+  );
 }

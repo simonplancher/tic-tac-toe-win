@@ -101,6 +101,7 @@ export default function App() {
   if (screen === "lose")
     return (
       <LoseScreen
+        mode={mode}
         retry={() => {
           setBoard(Array(9).fill(null));
           if (mode === "puzzle") {

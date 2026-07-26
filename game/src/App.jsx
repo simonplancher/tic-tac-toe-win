@@ -35,7 +35,7 @@ export default function App() {
     newBoard[index] = "X";
 
     if (checkWinner(newBoard) === "X") {
-      setBoard(newBoard);
+      setBoard(Array(9).fill(null));
 
       setScreen("puzzle-game");
 

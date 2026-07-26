@@ -66,6 +66,10 @@ export default function App() {
 
     newBoard[index] = value;
 
+    if (!newBoard.includes(null)) {
+      checkPuzzleSolution();
+    }
+
     setBoard(newBoard);
   }
 
